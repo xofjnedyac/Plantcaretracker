@@ -45,7 +45,7 @@ function newPlantWindow() {
     function returnToHome() {
         container.remove();
     };
-
+ 
     let plantNameInput = document.querySelector('#plantName')
     let plantName = plantNameInput.Value;
     console.log(plantName);
