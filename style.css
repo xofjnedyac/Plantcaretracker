@@ -16,13 +16,12 @@ body {
 }
 
 header {
-    border-bottom: 0px solid #c7c7c7;
     box-shadow: 0px -4px 15px 10px rgba(0, 0, 0, 0.45);
     position: absolute;
     top: 0;
     width: 100%;
-    height: 120px;
-    background-color: #333333;
+    height: 150px;
+    background-color: white;
     position: relative;
 }
 
@@ -30,22 +29,36 @@ header h1 {
     text-align: center;
     font-size: 45px;
     font-family: 'Chivo';
-    font-weight: 300;
-    font-style: italic;
-    color: rgb(247, 247, 247);
+    font-weight: 400;
+    color: rgb(255, 255, 255);
     position: absolute;
     margin: auto auto auto auto;
     left: 0;
     right: 0;
-    top: 28px;
-    text-shadow: 0px 4px 7px #000000;
+    top: 35px;
+    text-shadow: 0px 4px 8px rgba(0, 0, 0, 0.692);
+}
+
+header p {
+    position: absolute;
+    top: 93px;
+    margin: 0 auto 0 auto;
+    text-align: center;
+    width: 100%;
+    color: white;
+    font-family: chivo;
+    font-weight: 300;
+    font-style: italic;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.692);
 }
 
 #headerbg {
     object-fit: fill;
-    object-position: bottom;
-    height: 120px;
-    filter: blur(4px) brightness(70%);
+    object-position: top;
+    height: 150px;
+    filter: brightness(80%) blur(2px);
+    width: 100%;
+    transform: scale(1.1);
 }
 
 #newPlant {
@@ -137,6 +150,7 @@ header h1 {
     width: 225px;
     height: 275px;
     object-fit: cover;
+    object-position: bottom;
     border-radius: 10px;
     box-shadow: 0px 3px 7px 1px rgba(0, 0, 0, .33);
     margin-top: 15px;
@@ -173,17 +187,46 @@ header h1 {
     font-size: 17px;
 }
 
+.textContainer {
+    margin-top: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.textContainer p {
+    font-size: 17px;
+    font-weight: 400;
+}
+
+input.last {
+    font-family: chivo;
+    text-align: center;
+    border-radius: 5px;
+    border: 1px solid #c2c2c2;
+    width: 90px;
+    height: 8px;
+    font-size: 15px;
+    font-weight: 300;
+    font-style: italic;
+    margin: 0;
+}
+
 .plantcontainer select {
     font-family: chivo;
     border-radius: 5px;
     border: none;
     text-align: center;
-    font-style: italic;
     border: 1px solid #c2c2c2;
+    font-weight: 300;
+    font-style: italic;
+    font-size:  15px;
 }
 
 .plantcontainer select option {
     font-family: chivo;
+    font-weight: 300;
+    font-style: italic;
+    font-size:  15px;
 }
 
 .plantcontainer textarea {
@@ -193,4 +236,19 @@ header h1 {
     max-width: 235px;
     max-height: 80px;
     border: 1px solid #c2c2c2;
+    font-weight: 300;
+    font-style: italic;
+    font-size:  15px;
+}
+
+p.waterFinal {
+    margin-top: 7px;
+}
+
+p.lightFinal {
+    margin-top: 7px;
+}
+
+p.otherFinal {
+    margin-top: 7px;
 }
