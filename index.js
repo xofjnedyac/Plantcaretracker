@@ -1,12 +1,10 @@
 
-    
-let plants = ['name', 'water', 'light', 'notes']; 
-
 let newPlant = document.querySelector("#newPlant")
 newPlant.addEventListener('click', (event) => newPlantWindow())
 
 
 function newPlantWindow() {
+    // Bring up the plant creator window after pressing the add new button
     let body = document.querySelector('#body')
     let container = document.createElement('div');
     container.id = 'newPlantWindow';
@@ -14,8 +12,7 @@ function newPlantWindow() {
     div.id = 'window';
     div.innerHTML = `
                 <div class="plantcontainer">
-                <!-- <img src="./lauren-mancke-DpphPG9ENsI-unsplash.jpg" width="2600" height="4000"> -->
-                <i class="fas fa-leaf fa-10x"></i>
+                <img src="./plant-icon.png" width="475" height="475">
                 <input type="text" value="My Plant" id="plantName">
                 <p class="water">Water once every: <select id="plantWater">
                     <option>Day</option>
@@ -37,39 +34,20 @@ function newPlantWindow() {
     container.append(div);
     body.append(container);
 
-    
-    
-
-
     let addNew = document.querySelector("#addNew");
+
+    // remove the new plant window
     function returnToHome() {
         container.remove();
     };
 
-//    get name from input field
+   
+    // get user inputs and store as variables
     let name = document.getElementById('plantName');
-    addNew.addEventListener('click', (event) => {
-            console.log(name.value)
-    });
-
-    // get water value from select field
     let water = document.getElementById('plantWater');
-    addNew.addEventListener('click', (event) => {
-        console.log(water.value)
-});
-
-    // get light value from select field
     let light = document.getElementById('plantLight');
-    addNew.addEventListener('click', (event) => {
-        console.log(light.value)
-});
-
-    // get notes from notes field
     let notes = document.getElementById('notes');
-    addNew.addEventListener('click', (event) => {
-        console.log(notes.value)
-});
-
+   
     // define render plant function
     function newPlantTile() {
         let container = document.querySelector('#plantsbox');
@@ -77,7 +55,7 @@ function newPlantWindow() {
         div.classList.add("plantcontainer")
 
         let img = document.createElement('img')
-        img.setAttribute('src', "./lauren-mancke-DpphPG9ENsI-unsplash.jpg")
+        img.setAttribute('src', "./plant-icon.png")
         div.append(img);
 
         let h1 = document.createElement('h1')
@@ -121,19 +99,16 @@ function newPlantWindow() {
         p4.append(lastWatered)
         p4.append(input)
         textContainer.append(p4)
-
-
-
-
-
-            
-        
-            
-
         container.append(div);
         console.log("New plant added")
-    }
 
+        // dbl click to remove plant
+        function removePlant() {
+            div.remove();
+            console.log('running')
+        }
+        div.addEventListener('dblclick', (event) => removePlant())
+    }
     addNew.addEventListener('click', (event) => newPlantTile());
     addNew.addEventListener('click', (event) => returnToHome());
     
@@ -141,7 +116,7 @@ function newPlantWindow() {
 }
 
 
-
+//  create initial example tile
 function ogPlantTile() {
     let container = document.querySelector('#plantsbox');
     let div = document.createElement('div');
@@ -149,28 +124,23 @@ function ogPlantTile() {
   
                     <img src="./lauren-mancke-DpphPG9ENsI-unsplash.jpg" width="2600" height="4000">
                     <h1 class="name">Fiddle-Leaf Fig</h1>
-                    <p class="water">Water once every: <select>
-                        <option>Day</option>
-                        <option>Week</option>
-                        <option>1-2 Weeks</option>
-                        <option>2-3 Weeks</option>
-                        <option>Month</option>
-                    </select></p>
-                    <p class="light">This plant likes: <select>
-                        <option>Direct light</option>
-                        <option>Bright, indirect light</option>
-                        <option>Medium light</option>
-                        <option>Low light</option>
-                    </select></p>
-                    <p class="other">Notes: <textarea></textarea></p>`
+                    <div class="textContainer">
+                    <p class="water">Water once every 1-2 weeks</p>
+                    <p class="light">This plant likes Bright, indirect light</p>
+                    <p class="other">Notes: Fertilize every 3-4 weeks during growing season</p>
+                    <p class="other">Last watered date: <input type="text" class="last"></input></p>
+                    </div>`
         div.classList.add("plantcontainer")
     container.append(div);
     console.log("Original Plant Created")
+
+    // dbl click to remove
+    function removePlant() {
+        div.remove();
+        console.log('running')
+    }
+    div.addEventListener('dblclick', (event) => removePlant())
 }
 
 
 ogPlantTile();
-
-
-let windowbg = document.querySelector('#newPlantWindow')
-// windowbg.addEventListener('click', (event) => closeWindow())
